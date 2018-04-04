@@ -1,28 +1,69 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+#game {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+#head {
+  font-size: 25px;
+  padding: 15px;
 }
 
-.App-title {
-  font-size: 1.5em;
+#status {
+  margin-bottom: 20px;
+  font-size: 20px;
+  color: red;
 }
 
-.App-intro {
-  font-size: large;
+#board {
+  display: flex;
+  width: 300px;
+  flex-wrap: wrap;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.square {
+  width: 100px;
+  height: 100px;
+  border: 1px solid #000000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 45px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.square:hover {
+  background: #eee;
+}
+
+.square:nth-child(1), .square:nth-child(2), .square:nth-child(3) {
+  border-top: 0;
+}
+
+.square:nth-child(7), .square:nth-child(8), .square:nth-child(9) {
+  border-bottom: 0;
+}
+
+.square:nth-child(3n+1) {
+  border-left: 0;
+}
+
+.square:nth-child(3n) {
+  border-right: 0;
+}
+
+.square.winnter {
+  background: red;
+}
+.gameEnded .square:hover {
+  background: none;
+  cursor: default;
 }
