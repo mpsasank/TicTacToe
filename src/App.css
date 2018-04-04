@@ -63,7 +63,9 @@
 .square.winnter {
   background: red;
 }
-.gameEnded .square:hover {
-  background: none;
+.gameEnded .square, .gameLocked .square {
   cursor: default;
+}
+.gameEnded .square:hover, .gameLocked .square:hover {
+  background: none;
 }
